@@ -10,7 +10,8 @@ A chave de API deve ser armazenada em uma variável de ambiente OPENAI_API_KEY.
 Como usar:
 Clone o repositório do projeto para o seu computador.
 Abra o terminal ou prompt de comando na pasta do projeto.
-Crie e ative um ambiente virtual usando o venv.
+Crie um ambiente virtual usando o venv. (python -m venv venv)
+Ativar o ambiente virtual /scripts/./activate
 Instale as dependências necessárias usando o comando pip install -r requirements.txt.
 Execute o programa usando o comando python ask_to_gpt.py.
 Digite uma pergunta e pressione Enter. Se você não digitar uma pergunta, o programa usará uma pergunta padrão pré-definida.
