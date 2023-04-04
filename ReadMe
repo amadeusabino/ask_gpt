@@ -1,0 +1,22 @@
+Programa de Perguntas e Respostas usando OpenAI API
+
+Este é um programa simples de perguntas e respostas que utiliza a API da OpenAI para fornecer respostas para perguntas feitas pelo usuário. 
+O programa faz uma chamada à API com a pergunta fornecida pelo usuário e retorna a resposta fornecida pelo modelo de linguagem da OpenAI.
+
+Pré-requisitos:
+Antes de executar o programa, você precisa ter uma conta da OpenAI e uma chave de API válida. 
+A chave de API deve ser armazenada em uma variável de ambiente OPENAI_API_KEY.
+
+Como usar:
+Clone o repositório do projeto para o seu computador.
+Abra o terminal ou prompt de comando na pasta do projeto.
+Crie e ative um ambiente virtual usando o venv.
+Instale as dependências necessárias usando o comando pip install -r requirements.txt.
+Execute o programa usando o comando python ask_to_gpt.py.
+Digite uma pergunta e pressione Enter. Se você não digitar uma pergunta, o programa usará uma pergunta padrão pré-definida.
+Aguarde enquanto o programa faz uma chamada à API da OpenAI e retorna a resposta.
+
+Observação:
+Este programa é fornecido apenas como um exemplo básico e pode ser facilmente modificado para atender às suas necessidades específicas. 
+Tenha em mente que a qualidade das respostas fornecidas pelo modelo de linguagem depende do modelo usado, dos dados de treinamento e da formulação da pergunta. 
+Além disso, tenha cuidado ao lidar com informações sensíveis ou confidenciais, pois elas podem ser incluídas nas respostas fornecidas pelo modelo.
