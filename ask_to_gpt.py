@@ -36,20 +36,24 @@ def alinhar_texto(texto, largura_coluna):
     return texto_alinhado
 
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+#openai.api_key = os.getenv("OPENAI_API_KEY")
+def initialize_openai():
+    openai.api_key = os.getenv("OPENAI_API_KEY")
+
 
 question = input("Digite sua pergunta: ")
 
 if question == '': 
     question = "O que e grafeno?" # pergunta padrão
     print(question)
-    
+
+initialize_openai()    
 try:
     answer = openai.Completion.create(
-                              model="text-davinci-003",
-                              prompt=question,
-                              max_tokens=2000,
-                              temperature=0
+                            model="text-davinci-003",
+                            prompt=question,
+                            max_tokens=2000,
+                            temperature=0
                                 )
 except BaseException as exception:
     print(f"Exception Name: {type(exception).__name__}")
