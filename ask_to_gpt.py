@@ -35,12 +35,28 @@ def alinhar_texto(texto, largura_coluna):
     # Retornar o texto alinhado
     return texto_alinhado
 
-
 #openai.api_key = os.getenv("OPENAI_API_KEY")
 def initialize_openai():
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
+def get_completion(prompt):
+    try:
+        answer = openai.Completion.create(
+                                model="text-davinci-003",
+                                prompt=question,
+                                max_tokens=2000,
+                                temperature=0
+                                    )        
 
+        r = alinhar_texto(answer.choices[0].text.strip(), 60)
+
+        return r
+    except BaseException as exception:
+        print(f"Exception Name: {type(exception).__name__}")
+        print(f"Exception Desc: {exception}")
+        return 
+
+# Main Process
 question = input("Digite sua pergunta: ")
 
 if question == '': 
@@ -48,19 +64,6 @@ if question == '':
     print(question)
 
 initialize_openai()    
-try:
-    answer = openai.Completion.create(
-                            model="text-davinci-003",
-                            prompt=question,
-                            max_tokens=2000,
-                            temperature=0
-                                )
-except BaseException as exception:
-    print(f"Exception Name: {type(exception).__name__}")
-    print(f"Exception Desc: {exception}")
 
-print("Resposta: ")
+print("Resposta: " + get_completion(question))    
 
-r = alinhar_texto(answer.choices[0].text.strip(), 60)
-
-print(r)
